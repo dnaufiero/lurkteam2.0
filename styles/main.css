@@ -1,0 +1,54 @@
+/* LurkTeam Styles */
+html, body {
+    font-size: 16px;
+    padding: 1%;
+}
+h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #ACB2C0;
+    background: #292C34;
+}
+
+button {
+    display: block;
+    margin: .5em 0;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stream-container {
+    margin-bottom: 2em;
+}
+
+.settings {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.settings.active {
+    color: white;
+}
+
+.settings-drawer {
+    position: absolute;
+    top: 0;
+    right: -454px;
+    padding: 2.5em 1em 1em;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+}
