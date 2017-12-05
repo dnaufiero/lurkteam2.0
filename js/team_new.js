@@ -145,7 +145,7 @@
 
         var arrayOfLines = $('#streamlurk').val().split('\n');
         $.each(arrayOfLines, function (index, item) {
-            streamerz[index] = item;
+            streamerz[index] = item.toLowerCase();
         });
 
         localStorage.setItem("streamers", JSON.stringify(streamerz));
@@ -167,7 +167,7 @@
 
         for (var i = 0; i < streamers.length; i++) {
             document.getElementById("streamlurk").value += enter;
-            document.getElementById("streamlurk").value += streamers[i];
+            document.getElementById("streamlurk").value += streamers[i].toLowerCase();
             enter = '\n';
         }
     }
