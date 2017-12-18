@@ -62,8 +62,13 @@
                     var data = JSON.parse(this.response);
                     var data = data.streams;
                     for (var i = 0, len = data.length; i < len; ++i) {
+                    	//if(data[i].channel.name == 'reiss_wolf' || data[i].channel.name == 'Reiss_wolf'){
+                    		//alert("no");
+                    	//}
+                    	//else{
                         var stream = data[i];
                         live_currently.push(stream.channel.name);
+                        //}
                     }
                     for (i = 0; i < streamers.length; i++) {
                         var streamer = streamers[i];
@@ -129,10 +134,19 @@
     //embeds the twitch video into the created <td>, and adds the player object to an array when the embed is ready
     function playVideo(streamer, num) {
 
-        new Twitch.Embed("twitch" + num, {
+        var embed = new Twitch.Embed("twitch" + num, {
             width: 340,
             height: 480,
-            channel: streamer
+            channel: streamer,
+            autoplay: true,
+            muted: false,
+            theme: 'dark'
+        });
+
+        embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+            var player = embed.getPlayer();
+            player.setMuted(false);
+            player.setVolume(0.1);
         });
     }
 
